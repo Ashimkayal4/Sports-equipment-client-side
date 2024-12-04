@@ -1,7 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/360_F_302128359_q6aCwgAvdYZBPF4XSwxXddLPE0h3Kor1.jpg'
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+
+
+    const { user } = useContext(AuthContext);
 
     const links = (
         <div className="gap-4 lg:flex">
@@ -53,6 +58,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+              
+                    {
+                        user && <h1>{user.email }</h1>
+                    }
                     <Link to="/login" className="btn">Login</Link>
                 </div>
             </div>

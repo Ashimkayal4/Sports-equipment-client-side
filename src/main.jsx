@@ -9,6 +9,7 @@ import AddEquipment from './Components/AddEquipment.jsx';
 import AllSports from './Components/AllSports.jsx';
 import MyEquipmentList from './Components/MyEquipmentList.jsx';
 import Login from './Authentication/Login.jsx';
+import Register from './Authentication/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element:<Login></Login>
+      },
+      {
+        path: '/register',
+        element:<Register></Register>
       }
     ]
   }
