@@ -6,7 +6,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
 
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const links = (
         <div className="gap-4 lg:flex">
@@ -16,12 +16,16 @@ const Navbar = () => {
             <li>
                 <NavLink to="/allSports">All Sports Equipment</NavLink>
             </li>
-            <li>
-                <NavLink to="/addEquipment">Add Equipment</NavLink>
-            </li>
-            <li>
-                <NavLink to="/myEquipmentList">My Equipment List</NavLink>
-            </li>
+            {
+                user && <li>
+                    <NavLink to="/addEquipment">Add Equipment</NavLink>
+                </li>
+            }
+            {
+                user && <li>
+                    <NavLink to="/myEquipmentList">My Equipment List</NavLink>
+                </li>
+           }
         </div>
     )
 
@@ -60,9 +64,19 @@ const Navbar = () => {
                 <div className="navbar-end">
               
                     {
-                        user && <h1>{user.email }</h1>
+                        user && <>
+                            <h1>{user.email }</h1>
+                            <button onClick={logOut} className="btn ml-2">LogOut</button>
+                        </>
+                        
                     }
-                    <Link to="/login" className="btn">Login</Link>
+              
+                    {
+                        !user && <>
+                            <Link to="/login" className="btn">Login</Link>
+                        
+                        </>
+                    }
                 </div>
             </div>
         </div>

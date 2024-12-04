@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
-    const { userLogin, setUser } = useContext(AuthContext);
+    const { userLogin, setUser, loginGoogle } = useContext(AuthContext);
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -16,6 +18,13 @@ const Login = () => {
             .then((res) => {
                 console.log(res)
                 setUser(res.user)
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Login successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
             .catch((error) => {
             console.log(error.message)
@@ -23,7 +32,11 @@ const Login = () => {
     }
     return (
         <div className="flex justify-center">
+          
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div className="flex justify-center">
+                    <button onClick={loginGoogle} className="btn w-full text-green-800 text-xl"> <FaGoogle /> Google login</button>
+                </div>
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">

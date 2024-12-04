@@ -10,6 +10,7 @@ import AllSports from './Components/AllSports.jsx';
 import MyEquipmentList from './Components/MyEquipmentList.jsx';
 import Login from './Authentication/Login.jsx';
 import Register from './Authentication/Register.jsx';
+import Private from './Components/Private.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,15 +23,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/allSports',
-        element:<AllSports></AllSports>
+        element: <AllSports></AllSports>,
+        loader: () => fetch('http://localhost:5000/equipments')
       },
       {
         path: '/addEquipment',
-        element:<AddEquipment></AddEquipment>
+        element: <Private><AddEquipment></AddEquipment></Private>
       },
       {
         path: '/myEquipmentList',
-        element:<MyEquipmentList></MyEquipmentList>
+        element: <Private><MyEquipmentList></MyEquipmentList></Private>
       },
       {
         path: '/login',
