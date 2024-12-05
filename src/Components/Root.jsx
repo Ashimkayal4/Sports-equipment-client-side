@@ -13,7 +13,9 @@ const Root = () => {
                 <Outlet></Outlet>
            </section>
             
-            <Footer></Footer>
+            <footer className="mt-3">
+                <Footer></Footer>
+           </footer>
         </div>
     );
 };

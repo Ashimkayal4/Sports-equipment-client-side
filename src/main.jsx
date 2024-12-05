@@ -11,6 +11,7 @@ import MyEquipmentList from './Components/MyEquipmentList.jsx';
 import Login from './Authentication/Login.jsx';
 import Register from './Authentication/Register.jsx';
 import Private from './Components/Private.jsx';
+import Details from './Home-component/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,12 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element:<Register></Register>
-      }
+      },
+      {
+        path: '/details/:id',
+        element: <Private><Details></Details></Private>,
+        loader: () => fetch('http://localhost:5000/equipments')
+      },
     ]
   }
 ])

@@ -5,6 +5,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import slider2 from '../assets/istockphoto-184141809-612x612.jpg'
+import slider1 from '../assets/360_F_363443852_32aPQw2o5ogHyUnO5svdf4MpQfxTNXcH.jpg'
+import slider3 from '../assets/sports-equipment-assorted-including-basketball-soccer-ball-tennis-ball-baseball-tennis-racket-football-birdie-badminton-racket-43938756.webp'
+
 const Slider = () => {
     return (
         <div>
@@ -16,13 +20,35 @@ const Slider = () => {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
             >
                 <SwiperSlide>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam voluptatem voluptate totam eius voluptatibus, cupiditate exercitationem distinctio mollitia corrupti voluptatum quia officia non minima beatae, ut quasi fugiat? Distinctio, reiciendis!
+                    <div className="flex gap-2 h-[400px]">
+                        <div className="w-1/2">
+                            <img src={slider3} className="w-full rounded-md" alt="" />
+                        </div>
+                        <div className="w-1/2 flex flex-col justify-center items-center">
+                        
+                            <button className="btn w-60 btn-primary">Purchase our product</button>
+                        </div>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime dolorem praesentium molestias sunt sit animi eaque consequatur, eveniet, illum esse dolorum voluptatibus unde omnis quos vel, tempore delectus corporis ipsa?
+                    <div className="flex gap-2 h-[400px]">
+                        <div className="w-1/2">
+                            <img src={slider1} className="w-full rounded-md" alt="" />
+                        </div>
+                        <div className="w-1/2 flex justify-center items-center">
+                            <button className="btn w-60 btn-primary">Purchase our product</button>
+                        </div>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit expedita, rem cum consequatur libero quis magni doloremque tempore reiciendis mollitia, ratione est enim vel, facere aliquid? Aliquam facere repudiandae distinctio.
+                    <div className="flex gap-2 h-[400px]">
+                        <div className="w-1/2">
+                            <img src={slider2} className="w-full rounded-md" alt="" />
+                        </div>
+                        <div className="w-1/2 flex justify-center items-center">
+                            <button className="btn w-60 btn-primary">Purchase our product</button>
+                        </div>
+                    </div>
                 </SwiperSlide>
             </Swiper>
         </div>

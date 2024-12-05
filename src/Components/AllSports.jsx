@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllSports = () => {
     const products = useLoaderData();
@@ -18,14 +18,14 @@ const AllSports = () => {
                     </thead>
                     <tbody>
                         {
-                            products.map(product => <tr>
+                            products.map(product => <tr key={product._id}>
                                 <th>
                                     <img className="w-20 h-20 rounded-full border" src={product.image} alt="" />
                                 </th>
                                 <th>{ product.item}</th>
                                 <td>{ product.category}</td>
                                 <td>{product.price}</td>
-                                <button className="btn my-3">view details</button>
+                                <td><Link to={`/details/${product._id}`} className="btn my-3">view details</Link ></td>
                             </tr>)
                         }
                     
