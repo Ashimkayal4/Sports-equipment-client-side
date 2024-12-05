@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { auth } from "../firebase/firebase.config";
 import Swal from "sweetalert2";
+import { auth } from "../../firebase/firebase.config";
 
 export const AuthContext = createContext();
 
