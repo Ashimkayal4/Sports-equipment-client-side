@@ -15,9 +15,8 @@ const AddEquipment = () => {
         const time = form.time.value
         const stock = form.stock.value
         
-        const newEquipment = { extraGrip,hitPaper,image, item, category, description, price, rating, time, stock }
-
-        console.log(newEquipment)
+        const newEquipment = { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock }
+        
 
         fetch('http://localhost:5000/equipments', {
             method:'POST',

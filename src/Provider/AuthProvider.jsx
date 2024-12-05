@@ -31,7 +31,8 @@ const AuthProvider = ({ children }) => {
     // signOut user
     const logOut = () => {
         setLoading(true)
-        return signOut(auth).then(res => {
+        return signOut(auth)
+            .then(res => {
             console.log(res)
             Swal.fire({
                 position: "top-center",

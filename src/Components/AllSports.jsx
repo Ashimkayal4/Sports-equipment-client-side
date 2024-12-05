@@ -4,7 +4,7 @@ const AllSports = () => {
     const products = useLoaderData();
     return (
         <div>
-            <h1>{products.length}</h1>
+            <h1>All products is here :{products.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
