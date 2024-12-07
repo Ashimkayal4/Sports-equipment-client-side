@@ -2,34 +2,46 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllSports = () => {
     const products = useLoaderData();
+
     return (
-        <div>
-            <h1>All products is here :{products.length}</h1>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Item name</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            products.map(product => <tr key={product._id}>
-                                <th>
-                                    <img className="w-20 h-20 rounded-full border" src={product.image} alt="" />
-                                </th>
-                                <th>{ product.item}</th>
-                                <td>{ product.category}</td>
-                                <td>{product.price}</td>
-                                <td><Link to={`/details/${product._id}`} className="btn my-3">view details</Link ></td>
-                            </tr>)
-                        }
-                    </tbody>
-                </table>
+        <div className="min-h-screen bg-gray-100 py-10">
+            <div className="container mx-auto px-6">
+                <h1 className="text-4xl font-semibold text-gray-800 mb-8">All Products ({products.length})</h1>
+
+                {/* Table Container */}
+                <div className="overflow-x-auto bg-white rounded-lg shadow-lg">
+                    <table className="table-auto w-full text-left">
+                        
+                        <thead className="bg-gray-800 text-white">
+                            <tr>
+                                <th className="px-6 py-4 text-sm font-semibold">Image</th>
+                                <th className="px-6 py-4 text-sm font-semibold">Item Name</th>
+                                <th className="px-6 py-4 text-sm font-semibold">Category</th>
+                                <th className="px-6 py-4 text-sm font-semibold">Price</th>
+                                <th className="px-6 py-4 text-sm font-semibold">Actions</th>
+                            </tr>
+                        </thead>
+
+                        {/* Table Body */}
+                        <tbody>
+                            {products.map(product => (
+                                <tr key={product._id} className="border-b hover:bg-gray-50">
+                                    <td className="px-6 py-4">
+                                        <img className="w-20 h-20 rounded-full object-cover" src={product.image} alt={product.item} />
+                                    </td>
+                                    <td className="px-6 py-4 text-sm">{product.item}</td>
+                                    <td className="px-6 py-4 text-sm">{product.category}</td>
+                                    <td className="px-6 py-4 text-sm">${product.price}</td>
+                                    <td className="px-6 py-4">
+                                        <Link to={`/details/${product._id}`} className="text-blue-600 hover:text-blue-800">
+                                            View Details
+                                        </Link>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
