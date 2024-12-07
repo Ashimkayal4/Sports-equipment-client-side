@@ -31,20 +31,7 @@ const AuthProvider = ({ children }) => {
     // signOut user
     const logOut = () => {
         setLoading(true)
-        return signOut(auth)
-            .then(res => {
-            console.log(res)
-            Swal.fire({
-                position: "top-center",
-                icon: "success",
-                title: "LogOut successfully",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }).catch(err => {
-            console.log(err.message)
-        })
-        
+        return signOut(auth)     
     }
 
     const authInfo = {

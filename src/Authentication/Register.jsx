@@ -1,9 +1,32 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
-    const { createUser, setUser } = useContext(AuthContext);
+    const { createUser, setUser, loginGoogle } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate()
+    const googleLogin = () => {
+        loginGoogle()
+            .then(res => {
+                console.log(res);
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Registration  successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
+    }
+
     const handleSubmit = e => {
         e.preventDefault();
     
@@ -14,7 +37,11 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log({name,photo,email,password})
+        const valid = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{6,}$/;
+        if (!valid.test(password)) {
+            console.log("Invalid password");
+            return;
+        }
 
         createUser(email, password)
             .then(res => {
@@ -29,6 +56,9 @@ const Register = () => {
     return (
         <div className="flex justify-center">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div className="flex justify-center">
+                    <button onClick={googleLogin} className="btn w-full text-green-800 text-xl"> <FaGoogle /> Google login</button>
+                </div>
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">

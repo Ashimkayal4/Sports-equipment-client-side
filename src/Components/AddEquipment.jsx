@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddEquipment = () => {
+    const { user } = useContext(AuthContext);
+
+    const email = user.email;
+
     const handleEquipment = e => {
         e.preventDefault();
         const form = e.target;
@@ -15,7 +21,7 @@ const AddEquipment = () => {
         const time = form.time.value
         const stock = form.stock.value
         
-        const newEquipment = { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock }
+        const newEquipment = { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock ,email }
         
 
         fetch('http://localhost:5000/equipments', {

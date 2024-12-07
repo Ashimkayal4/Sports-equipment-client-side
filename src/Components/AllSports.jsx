@@ -28,7 +28,6 @@ const AllSports = () => {
                                 <td><Link to={`/details/${product._id}`} className="btn my-3">view details</Link ></td>
                             </tr>)
                         }
-                    
                     </tbody>
                 </table>
             </div>

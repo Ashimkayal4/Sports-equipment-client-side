@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/360_F_302128359_q6aCwgAvdYZBPF4XSwxXddLPE0h3Kor1.jpg'
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
 
@@ -28,6 +29,22 @@ const Navbar = () => {
            }
         </div>
     )
+
+    const signOut = () => {
+        logOut()
+            .then(res => {
+                console.log(res)
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "LogOut successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }).catch(err => {
+                console.log(err.message)
+            })
+    }
 
     return (
         <div>
@@ -66,7 +83,7 @@ const Navbar = () => {
                     {
                         user && <>
                             <h1>{user.email }</h1>
-                            <button onClick={logOut} className="btn ml-2">LogOut</button>
+                            <button onClick={signOut} className="btn ml-2">LogOut</button>
                         </>
                         
                     }

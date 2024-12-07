@@ -17,13 +17,13 @@ const Feedback = () => {
                     </div>
 
                     <h3 className="text-2xl font-bold">Virat kholi</h3>
-                    <p className="text-sm text-gray-400">cricket | world cup final</p>
+                    <p className="text-sm text-gray-400">cricket || world cup final</p>
                     <p className="mt-4 text-gray-300 italic">
-                        Scored the winning goal in the final minute with ProStrike Boots.
+                        Scored the winning runs in the final minute with MRF bat.
                     </p>
                     <div className="mt-6 text-sm">
                         <p className="flex gap-2"><strong>Before :</strong> Struggled with control and accuracy </p>
-                        <p><strong className="mr-2">After :</strong>improved accuracy by 20%, leading to a game-winning goal.</p>
+                        <p><strong className="mr-2">After :</strong>improved accuracy by 20%, leading to a game-winning runs.</p>
                     </div>
                     <div className="mt-6 text-blue-400">
 
@@ -36,8 +36,8 @@ const Feedback = () => {
                         Game-Changer
                     </div>
 
-                    <h3 className="text-2xl font-bold">Virat kholi</h3>
-                    <p className="text-sm text-gray-400">cricket | world cup final</p>
+                    <h3 className="text-2xl font-bold">Messi</h3>
+                    <p className="text-sm text-gray-400">Football || world cup final</p>
                     <p className="mt-4 text-gray-300 italic">
                         Scored the winning goal in the final minute with ProStrike Boots.
                     </p>
@@ -56,8 +56,8 @@ const Feedback = () => {
                         Game-Changer
                     </div>
 
-                    <h3 className="text-2xl font-bold">Virat kholi</h3>
-                    <p className="text-sm text-gray-400">cricket | world cup final</p>
+                    <h3 className="text-2xl font-bold">Ronaldo</h3>
+                    <p className="text-sm text-gray-400">Football || USL final</p>
                     <p className="mt-4 text-gray-300 italic">
                         Scored the winning goal in the final minute with ProStrike Boots.
                     </p>
