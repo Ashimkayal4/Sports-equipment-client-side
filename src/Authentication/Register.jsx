@@ -16,7 +16,7 @@ const Register = () => {
                 Swal.fire({
                     position: "top-center",
                     icon: "success",
-                    title: "Registration  successfully",
+                    title: "Registration successful",
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -40,17 +40,36 @@ const Register = () => {
 
         const valid = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{6,}$/;
         if (!valid.test(password)) {
-            console.log("Invalid password");
+            Swal.fire({
+                position: "top-center",
+                icon: "error",
+                title: "Must one uppercase,one lowercase and 6 letter long",
+                showConfirmButton: false,
+                timer: 1500
+            });
             return;
         }
 
         createUser(email, password)
             .then(res => {
-                console.log(res.user)
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Registration successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 setUser(res.user)
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
-               console.log(error.message)
+                Swal.fire({
+                    position: "top-center",
+                    icon: "error",
+                    title: error.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
     }
 
