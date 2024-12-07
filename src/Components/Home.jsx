@@ -28,6 +28,10 @@ const Home = () => {
                 <Feedback></Feedback>
             </section>
 
+            <section>
+                
+            </section>
+
         </div>
     );
 };

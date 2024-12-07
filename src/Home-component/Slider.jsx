@@ -20,37 +20,37 @@ const Slider = () => {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
             >
                 <SwiperSlide>
-                    <div className="flex gap-2 h-[400px]">
-                        <div className="w-1/2">
+                    <div className="lg:flex gap-2 lg:h-[400px]">
+                        <div className="lg:w-1/2">
                             <img src={slider3} className="w-full rounded-md" alt="" />
                         </div>
-                        <div className="w-1/2 flex flex-col justify-center items-center">
-                            <h1>We give you the best product in the world</h1>
-                            <h1>Get 20% discount</h1>
+                        <div className="lg:w-1/2 flex flex-col justify-center items-center">
+                            <h1 className="text-2xl">We give you the best product in the world</h1>
+                            <h1 className="text-xl mb-10">Get 20% discount</h1>
                             <button className="btn w-60 btn-primary">Purchase our product</button>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="flex gap-2 h-[400px]">
-                        <div className="w-1/2">
+                    <div className="lg:flex gap-2 h-[400px]">
+                        <div className="lg:w-1/2">
                             <img src={slider1} className="w-full rounded-md" alt="" />
                         </div>
-                        <div className="w-1/2 flex justify-center items-center">
-                            <h1>We give you the best product in the world</h1>
-                            <h1>Get 20% discount</h1>
+                        <div className="lg:w-1/2 flex flex-col justify-center items-center">
+                            <h1 className="text-2xl">We give you the best product in the world</h1>
+                            <h1 className="text-xl mb-10">Get 20% discount</h1>
                             <button className="btn w-60 btn-primary">Purchase our product</button>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="flex gap-2 h-[400px]">
-                        <div className="w-1/2">
+                    <div className="lg:flex gap-2 h-[400px]">
+                        <div className="lg:w-1/2">
                             <img src={slider2} className="w-full rounded-md" alt="" />
                         </div>
-                        <div className="w-1/2 flex justify-center items-center">
-                            <h1>We give you the best product in the world</h1>
-                            <h1>Get 20% discount</h1>
+                        <div className=" lg:w-1/2 flex flex-col justify-center items-center">
+                            <h1 className="text-2xl">We give you the best product in the world</h1>
+                            <h1 className="text-xl mb-10">Get 20% discount</h1>
                             <button className="btn w-60 btn-primary">Purchase our product</button>
                         </div>
                     </div>
