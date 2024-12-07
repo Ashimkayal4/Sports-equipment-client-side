@@ -24,6 +24,7 @@ const Login = () => {
                 });
 
                 navigate(location?.state ? location.state : '/')
+                setUser(res.user)
             })
             .catch(err => {
                 console.log(err.message)
@@ -50,6 +51,7 @@ const Login = () => {
                 });
 
                 navigate(location?.state ? location.state : '/')
+                setUser(res.user)
             })
             .catch((error) => {
             console.log(error.message)

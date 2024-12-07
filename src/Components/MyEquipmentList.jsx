@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEdit } from "react-icons/fa";
-import { FaDeleteLeft } from "react-icons/fa6";
+import { MdDelete } from "react-icons/md";
 
 const MyEquipmentList = () => {
     const { user } = useContext(AuthContext);
@@ -25,9 +25,9 @@ const MyEquipmentList = () => {
                                 <h2 className="card-title">{item.item}</h2>
                                 <p>{item.description}</p>
                                 <p className="font-bold">Price: ${item.price}</p>
-                                <div className="card-actions justify-between">
-                                    <button className="btn"><FaEdit></FaEdit> Edit</button>
-                                    <button className="btn">Delete</button>
+                                <div className="flex justify-between">
+                                    <Link to={`/update/${item._id}`} className="btn btn-neutral"><FaEdit></FaEdit> Update</Link>
+                                    <button className="btn btn-neutral"><MdDelete /> Delete</button>
                                 </div>
                             </div>
                         </div>

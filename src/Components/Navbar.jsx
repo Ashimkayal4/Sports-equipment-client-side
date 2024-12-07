@@ -82,7 +82,8 @@ const Navbar = () => {
               
                     {
                         user && <>
-                            <h1>{user.email }</h1>
+                            <h1>{user?.PhotoURL}</h1>
+                            <img src={user.photoURL} alt="" />
                             <button onClick={signOut} className="btn ml-2">LogOut</button>
                         </>
                         
