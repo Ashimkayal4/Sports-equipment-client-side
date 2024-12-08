@@ -3,6 +3,8 @@ import Slider from '../Home-component/Slider';
 import { useLoaderData } from 'react-router-dom';
 import ShowSixData from '../Home-component/ShowSixData';
 import Feedback from '../Home-component/Feedback';
+import ExtraSection from '../Home-component/ExtraSection';
+
 
 const Home = () => {
     const products = useLoaderData();
@@ -28,7 +30,8 @@ const Home = () => {
             </section>
 
             <section>
-                
+
+                <ExtraSection></ExtraSection>
             </section>
 
         </div>

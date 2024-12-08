@@ -86,14 +86,7 @@ const Navbar = () => {
             <div className="navbar-end flex items-center gap-4">
                 {user ? (
                     <>
-                        <div>
-                            <img
-                                className="rounded-full w-12 h-12"
-                                src={user?.photoURL}
-                                alt="User"
-                            />
-                        </div>
-                        <button onClick={signOut} className="btn">
+                        <button onClick={signOut} className="btn" title={user?.email}>
                             LogOut
                         </button>
                     </>

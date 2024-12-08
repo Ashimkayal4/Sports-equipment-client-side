@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const AddEquipment = () => {
     const { user } = useContext(AuthContext);
 
-    const email = user.email;
+    const userEmail = user.email;
 
     const handleEquipment = e => {
         e.preventDefault();
@@ -20,8 +20,10 @@ const AddEquipment = () => {
         const hitPaper = form.hitPaper.value
         const time = form.time.value
         const stock = form.stock.value
+        const userName = form.name.value
+        const email = form.email.value
 
-        const newEquipment = { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock, email }
+        const newEquipment = { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock, email ,userName }
 
 
         fetch('https://assignment-ten-server-side-mauve.vercel.app/equipments', {
@@ -55,7 +57,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="label-text">Image</span>
                         </label>
-                        <input type="text" name='image' placeholder="email" className="input input-bordered" required />
+                        <input type="text" name='image' placeholder="Product Image" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -110,6 +112,18 @@ const AddEquipment = () => {
                             <span className="label-text">Stock Status</span>
                         </label>
                         <input type="text" name='stock' placeholder="Stock status" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">User Name</span>
+                        </label>
+                        <input type="text" name='name' placeholder="User name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">User Email</span>
+                        </label>
+                        <input type="text" name='email' defaultValue={userEmail} placeholder="User email" className="input input-bordered" required />
                     </div>
 
                 </div>

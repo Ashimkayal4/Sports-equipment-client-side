@@ -6,10 +6,10 @@ const ShowSixData = ({ product }) => {
             <figure>
                 <img
                     src={product.image}
-                    className="w-60 h-60 mt-4"
+                    className="w-full h-60"
                     alt="products" />
             </figure>
-            <div className="card-body">
+            <div className="p-2 space-y-2">
                 <h2 className="card-title">{product.item}</h2>
                 <p>{product.description}</p>
                 <p>$ { product.price}</p>

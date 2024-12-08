@@ -25,8 +25,8 @@ const Slider = () => {
                             <img src={slider3} className="w-full rounded-md" alt="" />
                         </div>
                         <div className="lg:w-1/2 flex flex-col justify-center items-center">
-                            <h1 className="text-2xl mb-2">We give you the best products in the world</h1>
-                            <h1 className="text-xl mb-10">Get 20% discount</h1>
+                            <h1 className="lg:text-2xl mb-2">We give you the best products in the world</h1>
+                            <h1 className="lg:text-xl mb-6">Get 20% discount</h1>
                             <button className="btn w-60 btn-primary">Purchase our product</button>
                         </div>
                     </div>
@@ -37,8 +37,8 @@ const Slider = () => {
                             <img src={slider1} className="w-full rounded-md" alt="" />
                         </div>
                         <div className="lg:w-1/2 flex flex-col justify-center items-center">
-                            <h1 className="text-2xl mb-2">We give you the best products in the world</h1>
-                            <h1 className="text-xl mb-10">Get 20% discount</h1>
+                            <h1 className="lg:text-2xl mb-2">We give you the best products in the world</h1>
+                            <h1 className="lg:text-xl mb-6">Get 20% discount</h1>
                             <button className="btn w-60 btn-primary">Purchase our product</button>
                         </div>
                     </div>
@@ -49,8 +49,8 @@ const Slider = () => {
                             <img src={slider2} className="w-full rounded-md" alt="" />
                         </div>
                         <div className=" lg:w-1/2 flex flex-col justify-center items-center">
-                            <h1 className="text-2xl mb-2">We give you the best products in the world</h1>
-                            <h1 className="text-xl mb-10">Get 20% discount</h1>
+                            <h1 className="lg:text-2xl mb-2">We give you the best products in the world</h1>
+                            <h1 className="lg:text-xl mb-6">Get 20% discount</h1>
                             <button className="btn w-60 btn-primary">Purchase our product</button>
                         </div>
                     </div>
