@@ -19,17 +19,17 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root></Root>,
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/equipments/home')
+        loader: () => fetch('https://assignment-ten-server-side-mauve.vercel.app/equipments/home')
       },
       {
         path: '/allSports',
         element: <AllSports></AllSports>,
-        loader: () => fetch('http://localhost:5000/equipments')
+        loader: () => fetch('https://assignment-ten-server-side-mauve.vercel.app/equipments')
       },
       {
         path: '/addEquipment',
@@ -38,25 +38,25 @@ const router = createBrowserRouter([
       {
         path: '/myEquipmentList',
         element: <Private><MyEquipmentList></MyEquipmentList></Private>,
-        loader: () => fetch('http://localhost:5000/equipments')
+        loader: () => fetch('https://assignment-ten-server-side-mauve.vercel.app/equipments')
       },
       {
         path: '/login',
-        element:<Login></Login>
+        element: <Login></Login>
       },
       {
         path: '/register',
-        element:<Register></Register>
+        element: <Register></Register>
       },
       {
         path: '/details/:id',
         element: <Private><Details></Details></Private>,
-        loader: () => fetch('http://localhost:5000/equipments')
+        loader: () => fetch('https://assignment-ten-server-side-mauve.vercel.app/equipments')
       },
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/equipments/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-ten-server-side-mauve.vercel.app/equipments/${params.id}`)
       }
     ]
   }

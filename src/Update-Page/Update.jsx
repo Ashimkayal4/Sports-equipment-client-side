@@ -5,7 +5,7 @@ const Update = () => {
     const products = useLoaderData();
 
     const { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock, _id } = products;
-    
+
     const handleUpdate = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -24,12 +24,12 @@ const Update = () => {
             extraGrip, hitPaper, image, item, category, description, price, rating, time, stock
         }
 
-        fetch(`http://localhost:5000/equipments/${_id}`, {
+        fetch(`https://assignment-ten-server-side-mauve.vercel.app/equipments/${_id}`, {
             method: 'PUT',
             headers: {
-                'content-type':'application/json'
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(newEquipment)
+            body: JSON.stringify(newEquipment)
         })
             .then(res => res.json())
             .then(data => {
@@ -42,7 +42,7 @@ const Update = () => {
                         confirmButtonText: 'Done'
                     })
                 }
-        })
+            })
     }
 
     return (
@@ -56,7 +56,7 @@ const Update = () => {
                         <label className="label">
                             <span className="label-text">Image</span>
                         </label>
-                        <input type="text" name='image' defaultValue={image}  placeholder="email" className="input input-bordered" required />
+                        <input type="text" name='image' defaultValue={image} placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">

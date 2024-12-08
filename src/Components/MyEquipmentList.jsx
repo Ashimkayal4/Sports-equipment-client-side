@@ -25,7 +25,7 @@ const MyEquipmentList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/equipments/${_id}`, {
+                fetch(`https://assignment-ten-server-side-mauve.vercel.app/equipments/${_id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -37,7 +37,7 @@ const MyEquipmentList = () => {
                                 icon: "success"
                             });
 
-                            fetch("http://localhost:5000/equipments")
+                            fetch("https://assignment-ten-server-side-mauve.vercel.app/equipments")
                                 .then((res) => res.json())
                                 .then((updatedData) => {
                                     SetEquip(updatedData);

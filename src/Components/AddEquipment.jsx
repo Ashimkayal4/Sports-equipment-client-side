@@ -10,30 +10,30 @@ const AddEquipment = () => {
     const handleEquipment = e => {
         e.preventDefault();
         const form = e.target;
-        const image=form.image.value
-        const item =form.item.value
-        const category=form.category.value
-        const description = form.description .value
-        const price = form.price .value
-        const rating = form.rating .value
+        const image = form.image.value
+        const item = form.item.value
+        const category = form.category.value
+        const description = form.description.value
+        const price = form.price.value
+        const rating = form.rating.value
         const extraGrip = form.extraGrip.value
         const hitPaper = form.hitPaper.value
         const time = form.time.value
         const stock = form.stock.value
-        
-        const newEquipment = { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock ,email }
-        
 
-        fetch('http://localhost:5000/equipments', {
-            method:'POST',
+        const newEquipment = { extraGrip, hitPaper, image, item, category, description, price, rating, time, stock, email }
+
+
+        fetch('https://assignment-ten-server-side-mauve.vercel.app/equipments', {
+            method: 'POST',
             headers: {
-                'content-type':'application/json'
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(newEquipment)
+            body: JSON.stringify(newEquipment)
         })
             .then(res => res.json())
             .then(data => {
-            
+
                 console.log(data)
                 if (data.insertedId) {
                     Swal.fire({
@@ -44,8 +44,8 @@ const AddEquipment = () => {
                         timer: 1500
                     });
                 }
-          form.reset()
-        })
+                form.reset()
+            })
     }
     return (
         <div>
@@ -111,7 +111,7 @@ const AddEquipment = () => {
                         </label>
                         <input type="text" name='stock' placeholder="Stock status" className="input input-bordered" required />
                     </div>
-                  
+
                 </div>
                 <input type="submit" className="btn btn-neutral w-full mt-2" value="Submit" />
             </form>
