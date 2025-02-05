@@ -4,6 +4,8 @@
 
 EquiSports is an online store dedicated to providing sports enthusiasts with top-quality sports equipment, from gear to apparel. The platform allows customers to browse, purchase, and manage sports accessories with ease. The website supports user authentication and a seamless product management experience for users 
 
+ <p><img src="https://i.ibb.co.com/PGBSvYMf/Screenshot-125.png" alt=""></p>
+ 
 ## Features
 
 - **Responsive Design**: Fully responsive across all devices (mobile, tablet, and desktop).
