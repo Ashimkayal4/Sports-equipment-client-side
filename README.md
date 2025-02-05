@@ -2,7 +2,7 @@
 
 **Live link :** https://assignment-ten-72073.web.app/
 
-EquiSports is an online store dedicated to providing sports enthusiasts with top-quality sports equipment, from gear to apparel. The platform allows customers to browse, purchase, and manage sports accessories with ease. The website supports user authentication and a seamless product management experience for users.
+EquiSports is an online store dedicated to providing sports enthusiasts with top-quality sports equipment, from gear to apparel. The platform allows customers to browse, purchase, and manage sports accessories with ease. The website supports user authentication and a seamless product management experience for users 
 
 ## Features
 
